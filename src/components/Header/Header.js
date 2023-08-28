@@ -52,7 +52,7 @@ function Header() {
       )}
 
       {viewSecondHeader() && (
-        <header className="header header_gray" id="header-gray">
+        <header className="header header__gray" id="header-gray">
           <Link to="/" className="logo">
             <img src={logo} alt="Логотип приложения" />
           </Link>
@@ -60,14 +60,14 @@ function Header() {
             <NavLink
               to="/movies"
               className="header__button"
-              activeclassname="header__button_active"
+              activeclassname="header__button-active"
             >
               Фильмы
             </NavLink>
             <NavLink
               to="/saved-movies"
               className="header__button"
-              activeclassname="header__button_active"
+              activeclassname="header__button-active"
             >
               Сохранённые фильмы
             </NavLink>

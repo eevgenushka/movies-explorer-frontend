@@ -51,7 +51,7 @@
   opacity: 0.8;
 }
 
-.form__button-save_inactive {
+.form__button-save-inactive {
   pointer-events: none;
   background: #ffffff;
   border: 1px solid #000000;
@@ -60,7 +60,7 @@
   opacity: 0.2;
 }
 
-.form__button-save_loading {
+.form__button-save-loading {
   pointer-events: none;
   opacity: 0.6;
 }

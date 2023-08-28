@@ -7,7 +7,7 @@
   background: #073042;
 }
 
-.header_gray {
+.header__gray {
   background: #202020;
 }
 
@@ -38,7 +38,7 @@
   transition: 0.7s;
 }
 
-.header__button_active {
+.header__button-active {
   color: #2be080;
 }
 

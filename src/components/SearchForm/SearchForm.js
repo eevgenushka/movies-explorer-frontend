@@ -10,7 +10,7 @@ function SearchForm() {
           name="query"
           className="search__input"
           id="search-input"
-          
+          required
           type="text"
           placeholder="Фильм"
         ></input>

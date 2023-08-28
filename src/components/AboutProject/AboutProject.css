@@ -67,7 +67,7 @@
   font-size: 14px;
 }
 
-.about-project__time-title_green {
+.about-project__time-title-green {
   background-color: #3ddc84;
   color: #000000;
 }
@@ -149,5 +149,12 @@
   .about-project__time-work {
     font-size: 11px;
     line-height: 13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .about-project__description  {
+    flex-direction: column;
+   gap: 40px;
   }
 }
