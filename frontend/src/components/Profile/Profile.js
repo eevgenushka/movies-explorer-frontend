@@ -1,9 +1,9 @@
+import "./Profile.css"
 import React, { useEffect, useContext, useState } from "react"
 import CurrentUserContext from "../../contexts/CurrentUserContext"
 import Header from "../Header/Header"
 import { EMAIL_REGEX } from "../../utils/constants"
 import useForm from "../../hooks/useForm"
-import "./Profile.css"
 
 function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
   const currentUser = useContext(CurrentUserContext)

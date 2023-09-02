@@ -1,4 +1,4 @@
-import { handleSendingRequest } from "./functions"
+import { handleSendingRequest } from "./utils"
 
 export const BASE_URL = "https://api.nomoreparties.co/beatfilm-movies"
 

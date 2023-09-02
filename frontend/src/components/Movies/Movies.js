@@ -3,7 +3,7 @@ import "./Movies.css"
 import SearchForm from "../SearchForm/SearchForm"
 import Footer from "../Footer/Footer"
 import MoviesCardList from "../MoviesCardList/MoviesCardList"
-import { filterMovies, filterDuration } from "../../utils/functions"
+import { filterMovies, filterDuration } from "../../utils/utils"
 import * as movies from "../../utils/MoviesApi"
 import Header from "../Header/Header"
 
@@ -37,7 +37,6 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
         .then((cardsData) => {
           handleMovieFiltering(cardsData, query, isShortMovies)
           setisReqError(false)
-          console.log(cardsData)
         })
         .catch((err) => {
           setisReqError(true)
@@ -66,11 +65,9 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
 
   useEffect(() => {
     if (localStorage.getItem("shortMovies") === "true") {
-      console.log(setisShortMovies)
       setisShortMovies(true)
     } else {
       setisShortMovies(false)
-      console.log(setisShortMovies)
     }
   }, [])
 

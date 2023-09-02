@@ -1,4 +1,4 @@
-import { handleSendingRequest } from "./functions"
+import { handleSendingRequest } from "./utils"
 
 //export const BASE_URL = 'https://api.';
 
@@ -71,7 +71,7 @@ export const getMovies = () => {
   }).then((res) => handleSendingRequest(res))
 }
 
-export const addNewCard = (data) => {
+export const addNewMovies = (data) => {
   return fetch(`${BASE_URL}/movies`, {
     method: "POST",
     headers: {

@@ -1,7 +1,7 @@
+import "./Navigation.css"
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
 import account from "../../images/account-btn.svg"
-import "./Navigation.css"
 
 function Navigation({ handleCloseMobileMenu }) {
   const setActiveColorLink = ({ isActive }) =>

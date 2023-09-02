@@ -1,6 +1,6 @@
 import React from "react"
 import "./MoviesCard.css"
-import { durationConverter } from "../../utils/functions"
+import { durationConverter } from "../../utils/utils"
 
 function MoviesCard({
   card,

@@ -35,6 +35,9 @@ function MoviesCardList({
       setShownMovies(5)
     }
   }
+  useEffect(() => { 
+    calculateMoviesDisplay(); 
+  }, [cards]);
 
   useEffect(() => {
     let resizeTimeout

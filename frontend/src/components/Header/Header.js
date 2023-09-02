@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import "./Header.css"
 import logo from "../../images/logo.svg"
 import account from "../../images/account-btn.svg"
 import menu from "../../images/menu-button.svg"
 import Navigation from "../Navigation/Navigation"
+import "./Header.css"
 
 function Header({ loggedIn }) {
   const [isClicked, setIsClicked] = useState(false)

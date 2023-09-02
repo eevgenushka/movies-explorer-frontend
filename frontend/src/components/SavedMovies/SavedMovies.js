@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import MoviesCardList from "../MoviesCardList/MoviesCardList"
-import { filterMovies, filterDuration } from "../../utils/functions"
+import { filterMovies, filterDuration } from "../../utils/utils"
 import SearchForm from "../SearchForm/SearchForm"
 
 function SavedMovies({ loggedIn, savedMovies, onDeleteCard }) {

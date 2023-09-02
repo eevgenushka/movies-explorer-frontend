@@ -13,7 +13,7 @@ function InfoToolTip(props) {
         {props.isSuccess ? (
           <>
             <p className="popup__signup-title">
-              Вы успешно зарегистрировались!
+            {props.text}
             </p>
           </>
         ) : (

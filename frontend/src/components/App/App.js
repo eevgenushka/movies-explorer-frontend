@@ -9,17 +9,17 @@ import {
 import Header from "../Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
+import NotFound from "../NotFound/NotFound"
+import Movies from "../Movies/Movies"
+import SavedMovies from "../SavedMovies/SavedMovies"
+import Profile from "../Profile/Profile"
+import Register from "../Register/Register"
+import Login from "../Login/Login"
+import "./App.css"
 import CurrentUserContext from "../../contexts/CurrentUserContext"
 import InfoTooltip from "../InfoTooltip/InfoTooltip"
 import InfoTooltipUpdate from "../infoTooltipUpdate/infoTooltipUpdate"
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute"
-import Register from "../Register/Register"
-import Login from "../Login/Login"
-import Movies from "../Movies/Movies"
-import SavedMovies from "../SavedMovies/SavedMovies"
-import Profile from "../Profile/Profile"
-import NotFound from "../NotFound/NotFound"
-import "./App.css"
 import * as api from "../../utils/MainApi"
 
 function App() {
@@ -35,6 +35,7 @@ function App() {
   const navigate = useNavigate()
   const location = useLocation()
   const path = location.pathname
+  const [infoTooltipText, setInfoTooltipText] = useState("");
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt")
@@ -67,7 +68,6 @@ function App() {
       api
         .getMovies()
         .then((cardsData) => {
-          console.log(cardsData)
           setSavedMovies(cardsData.reverse())
         })
         .catch((err) => {
@@ -83,6 +83,7 @@ function App() {
         setInfoToolTipPopupOpen(true)
         setIsSuccess(true)
         onLogin({ email, password })
+        setInfoTooltipText("Вы успешно зарегистрировались!"); 
       })
       .catch((err) => {
         setInfoToolTipPopupOpen(true)
@@ -99,6 +100,7 @@ function App() {
         if (res) {
           setInfoToolTipPopupOpen(true)
           setIsSuccess(true)
+          setInfoTooltipText("Вы успешно вошли!"); 
           localStorage.setItem("jwt", res.token)
           navigate("/movies", { replace: true })
           setLoggedIn(true)
@@ -149,7 +151,7 @@ function App() {
   
   function handleMovieLike(card) {
     api
-      .addNewCard(card)
+      .addNewMovies(card)
       .then((newMovie) => {
         setSavedMovies([newMovie, ...savedMovies])
       })
@@ -291,6 +293,7 @@ function App() {
             isSuccess={isSuccess}
             onClose={closeAllPopups}
             onCloseOverlay={closeByOverlayPopups}
+            text={infoTooltipText}
           />
           <InfoTooltipUpdate
             isOpen={isInfoToolTipUpdatePopupOpen}
