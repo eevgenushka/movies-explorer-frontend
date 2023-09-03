@@ -11,7 +11,7 @@ function MoviesCard({
   savedMovies,
 }) {
 
-  function onCardClick() {
+  function onMovieClick() {
     if (saved) {
       onDeleteCard(savedMovies.filter((m) => m.movieId === card.id)[0])
     } else {
@@ -19,7 +19,7 @@ function MoviesCard({
     }
   }
 
-  function onDelete() {
+  function onDeleteMovie() {
     onDeleteCard(card)
   }
 
@@ -52,13 +52,13 @@ function MoviesCard({
             <button
               type="button"
               className="movie__delete-button"
-              onClick={onDelete}
+              onClick={onDeleteMovie}
             ></button>
           ) : (
             <button
               type="button"
               className={cardLikeButtonClassName}
-              onClick={onCardClick}
+              onClick={onMovieClick}
             ></button>
           )}
         </div>

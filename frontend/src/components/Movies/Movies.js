@@ -64,6 +64,18 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
   }
 
   useEffect(() => {
+    if (localStorage.getItem("movieSearch")) {
+      if (filteredMovies.length === 0) {
+        setIsNotFound(true)
+      } else {
+        setIsNotFound(false)
+      }
+    } else {
+      setIsNotFound(false)
+    }
+  }, [filteredMovies])
+
+  useEffect(() => {
     if (localStorage.getItem("shortMovies") === "true") {
       setisShortMovies(true)
     } else {
@@ -82,18 +94,6 @@ function Movies({ loggedIn, handleLikeFilm, onDeleteCard, savedMovies }) {
       }
     }
   }, [])
-
-  useEffect(() => {
-    if (localStorage.getItem("movieSearch")) {
-      if (filteredMovies.length === 0) {
-        setIsNotFound(true)
-      } else {
-        setIsNotFound(false)
-      }
-    } else {
-      setIsNotFound(false)
-    }
-  }, [filteredMovies])
 
   return (
     <section className="movies">

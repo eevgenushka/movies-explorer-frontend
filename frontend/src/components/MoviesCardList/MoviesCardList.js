@@ -9,6 +9,8 @@ import {
   NUMBER_OF_MOVIES_DESKTOP,
   TABLET_ITEMS_PER_PAGE,
   MOBILE_ITEMS_PER_PAGE,
+  MAX_SIZE_PAGE,
+  MIDDLE_SIZE_PAGE,
 } from "../../utils/constants"
 
 function MoviesCardList({
@@ -27,42 +29,20 @@ function MoviesCardList({
 
   function calculateMoviesDisplay() {
     const display = window.innerWidth
-    if (display > 1180) {
+    if (display > MAX_SIZE_PAGE) {
       setShownMovies(12)
-    } else if (display > 767) {
+    } else if (display > MIDDLE_SIZE_PAGE) {
       setShownMovies(8)
     } else {
       setShownMovies(5)
     }
   }
-  useEffect(() => { 
-    calculateMoviesDisplay(); 
-  }, [cards]);
 
-  useEffect(() => {
-    let resizeTimeout
-
-    function handleResize() {
-      clearTimeout(resizeTimeout)
-      resizeTimeout = setTimeout(() => {
-        calculateMoviesDisplay()
-      }, 500)
-    }
-    calculateMoviesDisplay()
-
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      clearTimeout(resizeTimeout)
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
-
-  function increaseShownMoviesCount() {
+  function increaseShowMoviesCount() {
     const display = window.innerWidth
-    if (display > 1180) {
+    if (display > MAX_SIZE_PAGE) {
       setShownMovies(shownMovies + NUMBER_OF_MOVIES_DESKTOP)
-    } else if (display > 767) {
+    } else if (display > MIDDLE_SIZE_PAGE) {
       setShownMovies(shownMovies + TABLET_ITEMS_PER_PAGE)
     } else {
       setShownMovies(shownMovies + MOBILE_ITEMS_PER_PAGE)
@@ -72,6 +52,19 @@ function MoviesCardList({
   function findSavedMovieInList(savedMovies, card) {
     return savedMovies.find((savedMovie) => savedMovie.movieId === card.id)
   }
+
+  useEffect(() => { 
+    calculateMoviesDisplay(); 
+  }, [cards]);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      window.addEventListener("resize", calculateMoviesDisplay);
+      }, 500);
+      return () => {
+        window.removeEventListener('resize', calculateMoviesDisplay);
+      }
+  });
 
   return (
     <section className="movies">
@@ -126,7 +119,7 @@ function MoviesCardList({
                 {cards.length > shownMovies ? (
                   <button
                     className="movies__button"
-                    onClick={increaseShownMoviesCount}
+                    onClick={increaseShowMoviesCount}
                   >
                     Ещё
                   </button>

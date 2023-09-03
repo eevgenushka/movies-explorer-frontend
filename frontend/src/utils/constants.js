@@ -4,6 +4,9 @@ const MOBILE_ITEMS_PER_PAGE = 2
 
 const MAX_SHORT_DURATION = 40
 
+const MAX_SIZE_PAGE = 1180
+const MIDDLE_SIZE_PAGE = 1180
+
 const EMAIL_REGEX = "[a-zA-Z0-9_.]+@[a-zA-Z0-9_]+\\.[a-z]{2,}"
 
 export {
@@ -12,4 +15,6 @@ export {
   MOBILE_ITEMS_PER_PAGE,
   MAX_SHORT_DURATION,
   EMAIL_REGEX,
+  MAX_SIZE_PAGE,
+  MIDDLE_SIZE_PAGE,
 }

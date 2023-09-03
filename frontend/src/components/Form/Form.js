@@ -20,7 +20,7 @@ function Form({
         <img src={logo} alt="Логотип приложения" />
       </Link>
       <h3 className="form__title">{title}</h3>
-      <form className="forma" onSubmit={onSubmit} id="form" noValidate>
+      <form className="form__container" onSubmit={onSubmit} id="form" noValidate>
         {children}
         <button
           className={

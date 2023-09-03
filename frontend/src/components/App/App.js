@@ -181,6 +181,16 @@ function App() {
  
   const isOpen = isInfoToolTipPopupOpen || isInfoToolTipUpdatePopupOpen
 
+  const onSignOut = () => {
+    setLoggedIn(false)
+    localStorage.removeItem("jwt")
+    localStorage.removeItem("movies")
+    localStorage.removeItem("movieSearch")
+    localStorage.removeItem("shortMovies")
+    localStorage.removeItem("allMovies")
+    localStorage.clear()
+    navigate("/")
+  }
 
   useEffect(() => {
     function closeByEscapePopups(evt) {
@@ -195,17 +205,6 @@ function App() {
       }
     }
   }, [isOpen])
-
-  const onSignOut = () => {
-    setLoggedIn(false)
-    localStorage.removeItem("jwt")
-    localStorage.removeItem("movies")
-    localStorage.removeItem("movieSearch")
-    localStorage.removeItem("shortMovies")
-    localStorage.removeItem("allMovies")
-    localStorage.clear()
-    navigate("/")
-  }
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 37px 28px;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .movies__button-container {
