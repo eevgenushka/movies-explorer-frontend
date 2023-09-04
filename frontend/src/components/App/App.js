@@ -88,7 +88,6 @@ function App() {
       .catch((err) => {
         setInfoToolTipPopupOpen(true)
         setIsSuccess(false)
-        console.log(err)
       })
   }
 
@@ -109,7 +108,6 @@ function App() {
       .catch((err) => {
         setInfoToolTipPopupOpen(true)
         setIsSuccess(false)
-        console.log(err)
       })
       .finally(() => {
         setIsLoading(false)
