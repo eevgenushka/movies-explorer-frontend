@@ -1,6 +1,6 @@
 import { handleSendingRequest } from "./utils"
 
-export const BASE_URL = "http://api.movies.nomoredomainsicu.ru"
+export const BASE_URL = "https://api.movies.nomoredomainsicu.ru"
 
 export const getContent = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
