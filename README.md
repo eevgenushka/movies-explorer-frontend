@@ -1,6 +1,16 @@
-# Фронтенд дипломного проекта 3 этап movies-explorer-frontend
-
+Фронтенд дипломного проекта 4 этап movies-explorer-frontend and backend
 Дизайн макета из figma dark-3
 
-https://api.movies.nomoredomainsicu.ru/
-http://movies.nomoredomainsicu.ru/
+Настроена инфраструктура и создан сервер на express;
+Подключена база данных, созданы схемы и модели ресурсов API;
+Реализовано логирование, аутентификация и авторизация на сервере;
+Бэкенд задеплоен на Яндекс Облако;
+Свёрстаны компоненты на React, разметка портирована в его формат;
+Описана логика и вёрстка страниц регистрации, логина, редактирования профиля, сохранённых фильмов;
+Реализованы асинхронные GET- и POST-запросы к API;
+Проработаны авторизованные и неавторизованные состояния, сохранение фильмов в профиле;
+Полученные фильмы фильтруются на стороне клиента.
+Инструменты и стек: #HTML #CSS #React #Express #MongoDB #NodeJS #API #Nginx #JWT #Postman
+Ссылка на pull request #2 (comment)
+
+Backend https://api.movies.nomoredomainsicu.ru Frontend https://movies.nomoredomainsicu.ru
