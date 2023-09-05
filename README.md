@@ -1,4 +1,4 @@
-# Фронтенд дипломного проекта 4 этап movies-explorer-frontend
+# Фронтенд дипломного проекта 4 этап movies-explorer-frontend and backend
 
 Дизайн макета из figma dark-3
 
